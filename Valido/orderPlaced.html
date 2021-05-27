@@ -1,0 +1,28 @@
+<script> //Informações que serão disparadas na página de finalização de pedido
+    window.dataLayer = window.dataLayer || []
+
+    dataLayer.push({
+    'event': 'orderPlaced',
+    'userId': '1272',
+    'pageCategory': 'checkout',
+    'pageDepartment': null,
+    'pageTitle': 'Checkout page or step',
+    'virtualPagePath': '/',
+    'transactionId': '1234', // obrigatório
+    'transactionAffiliation': 'Roupas Acme', // Loja que vai entregar o pedido
+    'transactionTotal': 18.28, //obrigatório
+    'transactionTax': 1.29,
+    'transactionShipping': 5,
+    'transactionProducts': [{
+      'name': 'Camiseta',
+      'id': '134',
+      'price': 11.99,
+      'priceFrom': 15.99,
+      'brand': 'Nike',
+      'sku': 'VA1E123',
+      'category': 'Camisa',
+      'categoryTree': ['Masculino', 'Camisa'],
+      'quantity': 1
+    }]
+  });
+</script>
