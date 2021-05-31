@@ -1,0 +1,23 @@
+<script> //Informações que serão disparadas no processo de checkout
+    window.dataLayer = window.dataLayer || []
+    var tituloPagina = document.title.split("|")
+    dataLayer.push({
+    'event': 'checkout', //ok
+    'userId': '1272', //ok
+    'pageCategory': 'checkout', //ok
+    'pageTitle': tituloPagina, //ok
+    'checkoutStep': 2, //ok
+    'checkoutStepName': '?????', //usavel
+    'cartFormProducts': [{
+      'name': 'Camiseta', //Falta Cross
+      'id': '134', //Falta Cross
+      'price': 11.99, //Falta Cross
+      'priceFrom': 15.99, //Falta Cross
+      'brand': 'Nike', //Falta Cross
+      'variant': 'VA1E123', //Falta Cross
+      'category': 'Camisa', //Falta Cross
+      'categoryTree': ['Masculino', 'Camisa'],//Falta Cross
+      'quantity': 1 //Falta Cross
+    }]
+  });
+</script>
