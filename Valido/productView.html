@@ -1,22 +1,195 @@
 <script> //Informações que serão disparadas nas páginas de produto
-    window.dataLayer = window.dataLayer || []
+  window.dataLayer = window.dataLayer || []
+  var tituloPagina = document.title
+  var productName = document.title.split("|")[0]
+  var productCurso = document.title.split("|")[0].split("-")[1].toLowerCase().replace(' ','').replace(' ','')
+  var productArea = document.getElementsByClassName('_areaProduto')[0].innerHTML
+  var aVista = document.getElementsByClassName('card-sign-up-price-secondary')[0].textContent.split(" ")[1] 
+  var anual = getValorElement = document.getElementsByClassName('card-sign-up-price')[0].textContent.split(" ")[1]
+  var mensal = getValorElement = document.getElementsByClassName('card-sign-up-price-secondary')[3].textContent.split(" ")[1]
+  var prouductId = SelecionaID()
+
+    function SelecionaID (productCurso){
+
+  var productCurso = this.productCurso
+    var id = [ 'M1A1','M12C3','M2C1','M3F1',
+                'V1P1','M4G1','M5M1','M6O1',
+                'M7O2','M8P1','M9P2','M10T1',
+                'M11C2','M13E1','M14E2','M15G2',
+                'M16M2','M17M3','M18N1','N1N1',
+                'M19P3','M20P4','M21P5','M22R1',
+                'M23T2','M24U3','E1E1','E2E2',
+                'E3D1','N1N1','E4G1','E5T1',
+                'E6E3','E7E4','E8E5','E9E6',
+                'E10E7','F1F1','F2F2','F3F3',
+                'F4F4','F5F5','F5F5','F6F6',
+                'FR1F1','P1P1','P2P2'
+            ]
+  var idProduto
+  switch (productCurso) {
+    case 'proanestesia':
+      idProduto = id[0]
+      break
+    case 'proclim':
+      idProduto = id[1]
+      break
+    case 'procardiol':
+      idProduto = id[2]
+      break
+    case 'promef':
+      idProduto = id[3]
+      break
+    case 'promevet':
+      idProduto = id[4]
+      break
+    case 'proago':
+      idProduto = id[5]
+      break
+    case 'prourgem':
+      idProduto = id[6]
+      break
+    case 'pro-oftalmo':
+      idProduto = id[7]
+      break
+    case 'pro-orl':
+      idProduto = id[8]
+      break
+    case 'prorn':
+      idProduto = id[9]
+      break
+    case 'propsiq':
+      idProduto = id[10]
+      break
+    case 'proterapêutica':
+      idProduto = id[11]
+      break
+    case 'proaci':
+      idProduto = id[12]
+      break
+    case 'promede':
+      idProduto = id[13]
+      break
+    case 'proendócrino':
+      idProduto = id[14]
+      break
+    case 'proger':
+      idProduto = id[15]
+      break
+    case 'proami':
+      idProduto = id[16]
+      break
+    case 'promedtrab':
+      idProduto = id[16]
+      break
+    case 'proneuro':
+      idProduto = id[17]
+      break
+    case 'pronutri':
+      idProduto = id[18]
+      break
+    case 'proemped':
+      idProduto = id[19]
+      break
+    case 'proped':
+      idProduto = id[20]
+      break
+    case 'protiped':
+      idProduto = id[21]
+      break
+    case 'prorad':
+      idProduto = id[22]
+      break
+    case 'proato':
+      idProduto = id[23]
+      break 
+    case 'prourologia':
+      idProduto = id[24]
+      break  
+    case 'proenf-si':
+      idProduto = id[25]
+      break  
+    case 'proenf-aps':
+      idProduto = id[26]
+      break  
+    case 'pronanda':
+      idProduto = id[27]
+      break
+    case 'pronutri':
+      idProduto = id[28]
+      break
+    case 'proenf-ges':
+      idProduto = id[29]
+      break 
+    case 'protenf':
+      idProduto = id[30]
+      break 
+    case 'proenf-ti':
+      idProduto = id[31]
+      break 
+    case 'proenf-urg':
+      idProduto = id[32]
+      break 
+    case 'proenf-sca':
+      idProduto = id[33]
+      break 
+    case 'proenf-sa':
+      idProduto = id[34]
+      break 
+    case 'proenf-smn':
+      idProduto = id[35]
+      break
+    case 'profisio-cardio':
+      idProduto = id[36]
+      break 
+    case 'profisio-tia':
+      idProduto = id[37]
+      break  
+    case 'profisio-esp':
+      idProduto = id[38]
+      break
+    case 'profisio-nef':
+      idProduto = id[39]
+      break
+    case 'profisio-to':
+      idProduto = id[40]
+      break
+    case 'traumato-ortopédica':
+      idProduto = id[41]
+      break
+    case 'profisio-ped':
+      idProduto = id[42]
+      break
+    case 'profarma':
+      idProduto = id[43]
+      break
+    case 'propsico':
+      idProduto = id[44]
+      break
+    case 'procognitiva':
+      idProduto = id[45]
+      break
+    default:
+      idProduto = null
+      
+    }
+    return idProduto
+  }
+
+
 
     dataLayer.push({
-    'event': 'productView',
-    'userId': '1272',
-    'pageCategory': 'home',
-    'pageDepartment': null,
-    'pageTitle': 'Home page',
-    'virtualPagePath': '/',
+    'event': 'productView', 
+    'userId': '1272', //Pedir para ti
+    'pageCategory': 'Produto', 
+    'pageTitle': tituloPagina, 
     'product': {
-      'name': 'Camiseta',
-      'id': '134',
-      'price': 11.99,
-      'priceFrom': 15.99,
-      'brand': 'Nike',
-      'variant': 'VA1E123',
-      'category': 'Camisa',
-      'categoryTree': ['Masculino', 'Camisa'],
+      'name': productName, 
+      'id': prouductId, 
+      'price': [aVista,anual,mensal], 
+      'priceFrom': [aVista,anual,mensal], 
+      'brand': 'Secad', 
+      'category': productCurso, 
+      'categoryTree': [productName, productArea, productCurso],
     }
   });
 </script>

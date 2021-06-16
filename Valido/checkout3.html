@@ -1,8 +1,9 @@
 <script> //Informações que serão disparadas no processo de checkout
   window.dataLayer = window.dataLayer || []
   var tituloPagina = document.title
-  var urlPagina = {{Page URL}}
-  var ProdutoNomeURL = urlPagina.split('=')[1].split("&")[0]
+  
+  
+      var ProdutoNomeURL = urlPagina.split('=')[1].split("&")[0]
   var produtoNome = corrigeNome (ProdutoNomeURL)
   var produtoId = selecionaID(ProdutoNomeURL)
   
@@ -341,38 +342,21 @@ function corrigeNome (ProdutoNomeURL){
   
   
   
-  function verificaPlanoSelecionado(url){
-  if( urlPagina.includes('=A&')){
-     return 'Avista'
-    }
-  else if(urlPagina.includes('=B&')){
-    return'Mensal'
-  }
-  else if(urlPagina.includes('=P&')){
-    return'Anual'
-  }
-  else{
-    return null
-  }
- }
-
-  planoSelecionado = verificaPlanoSelecionado(urlPagina)
-
+  
   
   
   dataLayer.push({
-  'event': 'checkout2',  
+  'event': 'checkout3',  
   'userId': '1272', // pedir ti 
   'pageCategory': 'checkout',  
   'pageTitle': tituloPagina,  
-  'checkoutStep': 2,  
-  'checkoutStepName': 'Cadastro Dados de compra', 
+  'checkoutStep': 3,  
+  'checkoutStepName': 'Cadastro dados de envio', 
   'cartFormProducts': {
     'name': produtoNome, 
     'id': produtoId, 
     'price': 11.99, //pedir ti
     'priceFrom': 15.99, //pedir ti
-    'planType': planoSelecionado,
     'brand': 'Secad',
     'category': 'Camisa', //pedir ti
     'categoryTree': [produtoNome,'Masculino', 'Camisa'],//pedir ti

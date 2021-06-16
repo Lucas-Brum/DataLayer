@@ -1,0 +1,22 @@
+<script> //Informações que serão disparadas na inscrição de uma LP
+    window.dataLayer = window.dataLayer || []
+  
+    var tituloPagina = document.title
+    var nome =  $(".bricks-form__fieldset")[0].children[0].children[1].value
+    var email = $(".bricks-form__fieldset")[0].children[1].children[1].value
+    var telefone =  $(".bricks-form__fieldset")[0].children[2].children[1].children[3].value
+    var profissão = $(".bricks-form__fieldset")[0].children[3].children[1].value
+    var especialidade = $(".bricks-form__fieldset")[0].children[4].children[1].value
+     
+    dataLayer.push({
+      
+      'event': 'Inscrição',  
+      'pageTitle': tituloPagina,  
+      'name': nome, 
+      'email': email, 
+      'phone': telefone,
+      'profession': profissão,
+      'especially': especialidade,
+   
+  });
+</script>
